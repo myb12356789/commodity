@@ -1,0 +1,17 @@
+server:
+  port: 10086
+spring:
+  application:
+    name: itcast-zull
+zuul:
+  routes:
+    service-commodity:
+      path: /service-commodity/**
+# 根据服务地址配置路由    url: http://localhost:8080
+#根据服务名进行负载均衡
+      serviceId: service-commodity
+  prefix: /api
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka
